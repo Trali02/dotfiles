@@ -94,6 +94,7 @@
     enable = true;
     package = pkgs.vscode.fhs;
   };
+  programs.home-manager = { enable = true; };
   programs.fastfetch = { enable = true; };
   programs.wlogout = { enable = true; };
   services.hyprpaper = {
