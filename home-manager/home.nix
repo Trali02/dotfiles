@@ -18,6 +18,8 @@
       zig
       pokeget-rs
       zls
+      hyprshot
+      discord
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
@@ -27,14 +29,16 @@
       "$mod" = "SUPER";
       exec-once = "waybar &";
       general = {
-        "col.active_border" = "rgb(44b0c6) rgb(a306a2) 45deg";
+        "col.active_border" = "rgb(98971a)";
         "gaps_out" = 5;
+        "gaps_in" = 3;
+        "resize_on_border" = true;
       };
       monitors = { "monitor" = "eDP-1, 1920x1080@60, 0x0, 1.25"; };
       bind = [
         "ALT, SPACE, exec, rofi -show drun -show-icons"
-        "$mod, Q, exec, kitty"
-        "$mod, C, killactive"
+        "$mod, RETURN, exec, kitty"
+        "$mod, Q, killactive"
         "CTRL, right, resizeactive, 10 0"
         "CTRL, left , resizeactive, -10 0"
         "CTRL, up, resizeactive, 0 -10"
@@ -42,13 +46,17 @@
         "$mod, left, workspace, -1"
         "$mod, right, workspace, +1"
         "$mod, T, togglefloating"
+        " , PRINT, exec, hyprshot -m output"
       ];
       input = {
         kb_layout = "de";
         kb_options = "caps:swapescape";
         touchpad = { natural_scroll = true; };
       };
-      decoration = { rounding = 5; };
+      decoration = { rounding = 7; };
+      gestures = {
+        "workspace_swipe" = true;
+      };
     };
   };
   programs.kitty = {
