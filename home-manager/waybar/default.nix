@@ -8,7 +8,7 @@
         modules-left = [ "hyprland/workspaces" "hyprland/submap" ];
         modules-center = [ "clock" "mpd" ];
         modules-right =
-          [ "cpu" "network" "pulseaudio" "tray" "battery" "custom/power" ];
+          [ "cpu" "pulseaudio" "tray" "battery" "custom/power" ];
         "hyprland/workspaces" = {
           "format" = "<span>{icon}</span>";
           "on-click" = "activate";

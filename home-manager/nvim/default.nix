@@ -10,6 +10,7 @@
       nvim-lspconfig
       nvim-treesitter.withAllGrammars
       mini-nvim
+      nvim-tree-lua
     ];
  };
 }

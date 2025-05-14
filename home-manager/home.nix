@@ -13,6 +13,7 @@
       gcc
       helix
       pavucontrol
+      thefuck
       htop
       gnome-tweaks
       zig
@@ -57,14 +58,14 @@
         touchpad = { natural_scroll = true; };
       };
       decoration = { rounding = 7; };
-      gestures = {
-        "workspace_swipe" = true;
-      };
+      gestures = { "workspace_swipe" = true; };
     };
   };
   programs.kitty = {
     enable = true;
+    shellIntegration.enableZshIntegration = true;
     settings = {
+      shell = "zsh";
       dynamic_background_opacity = true;
       background_opacity = 0.6;
       background_blur = 5;
@@ -94,11 +95,17 @@
 
     };
   };
-  programs.bash = {
+  programs.zsh = {
     enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch";
       fetch = "pokeget random --hide-name | fastfetch --file-raw -";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "strug";
     };
   };
   programs.vscode = {
