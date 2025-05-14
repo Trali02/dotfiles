@@ -20,6 +20,9 @@
       zls
       hyprshot
       discord
+      dotnet-sdk_9
+      networkmanager
+      networkmanagerapplet
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
@@ -27,7 +30,7 @@
     enable = true;
     settings = {
       "$mod" = "SUPER";
-      exec-once = "waybar &";
+      exec-once = "waybar & nm-applet --indicator &";
       general = {
         "col.active_border" = "rgb(98971a)";
         "gaps_out" = 5;
@@ -110,8 +113,8 @@
     settings = {
       splash = false;
       splash_offset = 2.0;
-      preload = [ "/home/trali/Pictures/gruvbox-rainbow-nix.png" ];
-      wallpaper = [ "eDP-1,/home/trali/Pictures/gruvbox-rainbow-nix.png" ];
+      preload = [ "/home/trali/Pictures/wild_youth.png" ];
+      wallpaper = [ ",/home/trali/Pictures/wild_youth.png" ];
     };
   };
 }

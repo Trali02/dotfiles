@@ -57,6 +57,7 @@ window#waybar.hidden {
 #pulseaudio,
 #wireplumber,
 #custom-power,
+#tray,
 #mpd {
   padding: 0rem 0.5rem;
   border-radius: 1rem;
