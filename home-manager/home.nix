@@ -9,6 +9,7 @@
     packages = with pkgs; [
       nixfmt
       rustup
+      exercism
       libgcc
       gcc
       helix
@@ -51,7 +52,18 @@
         "$mod, right, workspace, +1"
         "$mod, T, togglefloating"
         " , PRINT, exec, hyprshot -m output"
+        "$mod, 1, movetoworkspacesilent, 1"
+        "$mod, 2, movetoworkspacesilent, 2"
+        "$mod, 3, movetoworkspacesilent, 3"
+        "$mod, 4, movetoworkspacesilent, 4"
+        "$mod, 5, movetoworkspacesilent, 5"
+        "$mod, 6, movetoworkspacesilent, 6"
+        "$mod, 7, movetoworkspacesilent, 7"
+        "$mod, 8, movetoworkspacesilent, 8"
+        "$mod, 9, movetoworkspacesilent, 9"
       ];
+      windowrule = [];
+      workspace = [];
       input = {
         kb_layout = "de";
         kb_options = "caps:swapescape";
