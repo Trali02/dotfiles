@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
     home-manager = {
@@ -29,6 +30,7 @@
       # Available through 'home-manager --flake .#trali@Nurture'
       homeConfigurations = {
         "trali@Nurture" = home-manager.lib.homeManagerConfiguration {
+          extraSpecialArgs = { inherit inputs outputs; };
           pkgs = import nixpkgs { system = "x86_64-linux";};
           # > Our main home-manager configuration file <
           modules = [ ./home-manager/home.nix ];

@@ -5,7 +5,7 @@
         theme = ./theme.rasi;
         package = pkgs.rofi-wayland;
     };
-    xdg.configFile."rofi/images/nurture.jpg" = {
-        source = ./nurture.jpg;
+    xdg.configFile."rofi/images/nurture.png" = {
+        source = ./nurture.png;
     };
 }

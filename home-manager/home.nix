@@ -1,4 +1,12 @@
-{ config, pkgs, ... }: {
+{ config, inputs, pkgs, ... }:
+let
+
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+  };
+
+in
+ {
   fonts.fontconfig.enable = true;
   nixpkgs.config.allowUnfree = true;
   imports = [ ./nvim ./waybar ./rofi ];
@@ -6,26 +14,29 @@
     username = "trali";
     homeDirectory = "/home/trali";
     stateVersion = "24.11";
-    packages = with pkgs; [
-      nixfmt
-      rustup
-      exercism
-      libgcc
-      gcc
-      helix
-      pavucontrol
-      thefuck
-      htop
-      gnome-tweaks
-      zig
-      pokeget-rs
-      zls
-      hyprshot
-      discord
-      dotnet-sdk_9
-      networkmanager
-      networkmanagerapplet
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    packages = [
+      pkgs.nixfmt
+      pkgs.rustup
+      pkgs.exercism
+      pkgs.libgcc
+      pkgs.gcc
+      pkgs.helix
+      pkgs.pavucontrol
+      pkgs.thefuck
+      pkgs.htop
+      pkgs.gnome-tweaks
+      pkgs.zig
+      pkgs.pokeget-rs
+      pkgs.zls
+      pkgs.hyprshot
+      pkgs.discord
+      pkgs.dotnet-sdk_9
+      pkgs.networkmanager
+      pkgs.networkmanagerapplet
+      pkgs.imagemagick
+      (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+
+      unstable.gowall
     ];
   };
   wayland.windowManager.hyprland = {
