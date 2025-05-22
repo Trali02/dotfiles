@@ -43,7 +43,9 @@ window {
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               15px;
+//    border-radius:               15px;
+    border:                      2px;
+    border-color:                @selected;
     cursor:                      "default";
     background-color:            @background;
 }
@@ -82,7 +84,7 @@ inputbar {
     enabled:                     true;
     spacing:                     10px;
     padding:                     15px;
-    border-radius:               10px;
+//    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     children:                    [ "textbox-prompt-colon", "entry" ];
@@ -90,7 +92,7 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+    str:                         " ";
     background-color:            inherit;
     text-color:                  inherit;
 }
@@ -112,7 +114,7 @@ mode-switcher{
 }
 button {
     padding:                     15px;
-    border-radius:               10px;
+//    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  inherit;
     cursor:                      pointer;
@@ -146,7 +148,7 @@ element {
     enabled:                     true;
     spacing:                     15px;
     padding:                     8px;
-    border-radius:               10px;
+//    border-radius:               10px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      pointer;
@@ -195,7 +197,7 @@ message {
 }
 textbox {
     padding:                     15px;
-    border-radius:               10px;
+//    border-radius:               10px;
     background-color:            @background-alt;
     text-color:                  @foreground;
     vertical-align:              0.5;
@@ -203,7 +205,7 @@ textbox {
 }
 error-message {
     padding:                     15px;
-    border-radius:               20px;
+//    border-radius:               20px;
     background-color:            @background;
     text-color:                  @foreground;
 }

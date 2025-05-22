@@ -37,6 +37,8 @@ in
       (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
 
       unstable.gowall
+      unstable.gleam
+      unstable.gimp3
     ];
   };
   wayland.windowManager.hyprland = {
