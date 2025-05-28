@@ -1,12 +1,9 @@
 { config, inputs, pkgs, ... }:
 let
 
-  unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.system;
-  };
+  unstable = import inputs.nixpkgs-unstable { system = pkgs.system; };
 
-in
- {
+in {
   fonts.fontconfig.enable = true;
   nixpkgs.config.allowUnfree = true;
   imports = [ ./nvim ./waybar ./rofi ];
@@ -34,11 +31,13 @@ in
       pkgs.networkmanager
       pkgs.networkmanagerapplet
       pkgs.imagemagick
-      (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      # (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      pkgs.nerd-fonts.jetbrains-mono
+      pkgs.nerd-fonts.fira-code
 
-      unstable.gowall
-      unstable.gleam
-      unstable.gimp3
+      pkgs.gowall
+      pkgs.gleam
+      pkgs.gimp3
     ];
   };
   wayland.windowManager.hyprland = {
@@ -75,8 +74,8 @@ in
         "$mod, 8, movetoworkspacesilent, 8"
         "$mod, 9, movetoworkspacesilent, 9"
       ];
-      windowrule = [];
-      workspace = [];
+      windowrule = [ ];
+      workspace = [ ];
       input = {
         kb_layout = "de";
         kb_options = "caps:swapescape";
