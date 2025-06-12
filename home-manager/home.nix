@@ -6,7 +6,7 @@ let
 in {
   fonts.fontconfig.enable = true;
   nixpkgs.config.allowUnfree = true;
-  imports = [ ./nvim ./waybar ./rofi ];
+  imports = [ ./nvim ./waybar ./rofi inputs.zen-browser.homeModules.beta ];
   home = {
     username = "trali";
     homeDirectory = "/home/trali";
@@ -139,6 +139,15 @@ in {
   programs.home-manager = { enable = true; };
   programs.fastfetch = { enable = true; };
   programs.wlogout = { enable = true; };
+  programs.zen-browser = {
+    enable = true;
+    policies = {
+      # DisableAppUpdate = true;
+      DisableTelemetry = true;
+      # find more options here: https://mozilla.github.io/policy-templates/
+    };
+  };
+
   services.hyprpaper = {
     enable = true;
     settings = {

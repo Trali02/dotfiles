@@ -11,6 +11,13 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+      # to have it up-to-date or simply don't specify the nixpkgs input  
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -31,7 +38,7 @@
       homeConfigurations = {
         "trali@Nurture" = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = { inherit inputs outputs; };
-          pkgs = import nixpkgs { system = "x86_64-linux";};
+          pkgs = import nixpkgs { system = "x86_64-linux"; };
           # > Our main home-manager configuration file <
           modules = [ ./home-manager/home.nix ];
         };
