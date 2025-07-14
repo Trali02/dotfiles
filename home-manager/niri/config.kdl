@@ -1,0 +1,14 @@
+input  {
+  keyboard {
+    xkb {
+      layout "de"
+      track-layout "global"
+    }
+  }
+  focus-follows-mouse
+}
+
+binds {
+  Alt+Space repeat=false { spawn "fuzzel"; }
+  Mod+Enter repeat=false { spawn "alacritty"; }
+}
