@@ -6,7 +6,14 @@ let
 in {
   fonts.fontconfig.enable = true;
   nixpkgs.config.allowUnfree = true;
-  imports = [ ./nvim ./waybar ./rofi inputs.zen-browser.homeModules.beta ./niri ];
+  imports = [ 
+    ./nvim 
+    ./waybar 
+    ./rofi 
+    inputs.zen-browser.homeModules.beta 
+    ./niri 
+    ./tex
+  ];
   home = {
     username = "trali";
     homeDirectory = "/home/trali";
