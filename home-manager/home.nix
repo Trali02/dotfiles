@@ -42,6 +42,8 @@ in {
       # (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.nerd-fonts.fira-code
+      pkgs.globalprotect-openconnect
+      pkgs.remmina
 
       pkgs.gowall
       pkgs.gleam
