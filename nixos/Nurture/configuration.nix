@@ -5,8 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+  imports = [ # Include the results of the
   ];
 
   # Bootloader.
@@ -115,6 +114,8 @@
     hyprland
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
+    gpclient
+    remmina
     # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
