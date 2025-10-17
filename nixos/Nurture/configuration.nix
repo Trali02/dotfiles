@@ -5,7 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the
+  imports = [
+    ./hardware-configuration.nix
   ];
 
   # Bootloader.
