@@ -6,7 +6,8 @@ let
 in {
   fonts.fontconfig.enable = true;
   nixpkgs.config.allowUnfree = true;
-  imports = [ ./nvim ./waybar ./rofi inputs.zen-browser.homeModules.beta ];
+  imports =
+    [ ./nvim ./waybar ./rofi inputs.zen-browser.homeModules.beta ./niri ./tex ];
   home = {
     username = "trali";
     homeDirectory = "/home/trali";
@@ -31,9 +32,12 @@ in {
       pkgs.networkmanager
       pkgs.networkmanagerapplet
       pkgs.imagemagick
+      pkgs.obsidian
       # (pkgs.nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.nerd-fonts.fira-code
+      pkgs.picard
+      pkgs.amberol
 
       pkgs.gowall
       pkgs.gleam
@@ -125,6 +129,7 @@ in {
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch";
       fetch = "pokeget random --hide-name | fastfetch --file-raw -";
+      work-vpn = "sudo gpclient --fix-openssl connect vpn2.hottgenroth.de";
     };
     oh-my-zsh = {
       enable = true;
@@ -147,6 +152,14 @@ in {
       # find more options here: https://mozilla.github.io/policy-templates/
     };
   };
+
+  programs.alacritty.enable = true; # Super+T in the default setting (terminal)
+  programs.fuzzel.enable = true; # Super+D in the default setting (app launcher)
+  programs.swaylock.enable =
+    true; # Super+Alt+L in the default setting (screen locker)
+  # services.mako.enable = true; # notification daemon
+  services.swayidle.enable = true; # idle management daemon
+  services.polkit-gnome.enable = true; # polkit
 
   services.hyprpaper = {
     enable = true;

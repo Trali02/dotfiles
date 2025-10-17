@@ -57,6 +57,7 @@ window#waybar.hidden {
 #pulseaudio,
 #wireplumber,
 #custom-power,
+#custom-brightness,
 #tray,
 #mpd {
   padding: 0rem 0.5rem;
@@ -133,6 +134,39 @@ label:focus {
   background-color: @red;
 }
 
+#backlight-slider,
+#pulseaudio-slider {
+  margin-right: 7px;
+  min-height: 0px;
+  margin-top: -4px;
+  margin-bottom: -4px;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  background: @foreground;
+  box-shadow: none;
+  min-height: 0px;
+  min-width: 0px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-width: 90px;
+  min-height: 8px;
+  border-radius: 8px;
+  margin-top: -4px;
+  margin-bottom: -4px;
+  background: @background;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  border-radius: 8px;
+  min-height: 0px;
+  border-color: @foreground;
+  background-color: @foreground;
+}
 /*
 
 window#waybar.solo {
