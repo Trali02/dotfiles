@@ -6,6 +6,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
@@ -20,7 +22,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-minecraft, ... }@inputs:
     let inherit (self) outputs;
     in {
       # NixOS configuration entrypoint
@@ -29,7 +31,11 @@
         Nurture = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           # > Our main nixos configuration file <
-          modules = [ ./nixos/Nurture/configuration.nix ];
+          modules = [
+            ./nixos/Nurture/configuration.nix
+            nix-minecraft.nixosModules.minecraft-servers
+            { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
+          ];
         };
       };
 
