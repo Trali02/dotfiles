@@ -7,7 +7,7 @@ in {
   fonts.fontconfig.enable = true;
   nixpkgs.config.allowUnfree = true;
   imports =
-    [ ./nvim ./waybar ./rofi inputs.zen-browser.homeModules.beta ./niri ./tex ];
+    [ ./nvim ./waybar ./rofi inputs.zen-browser.homeModules.beta ./niri ./tex ./quickshell ];
   home = {
     username = "trali";
     homeDirectory = "/home/trali";
@@ -38,6 +38,7 @@ in {
       pkgs.nerd-fonts.fira-code
       pkgs.picard
       pkgs.amberol
+      pkgs.unityhub
 
       pkgs.gowall
       pkgs.gleam
@@ -84,6 +85,11 @@ in {
         kb_layout = "de";
         kb_options = "caps:swapescape";
         touchpad = { natural_scroll = true; };
+      };
+      device = {
+        name = "nuphy-nuphy-air75-v3-dongle-1";
+        kb_layout = "us";
+        kb_options = "";
       };
       decoration = { rounding = 7; };
       gestures = { "workspace_swipe" = true; };
