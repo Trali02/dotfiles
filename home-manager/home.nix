@@ -20,7 +20,6 @@ in {
       pkgs.gcc
       pkgs.helix
       pkgs.pavucontrol
-      pkgs.thefuck
       pkgs.htop
       pkgs.gnome-tweaks
       pkgs.zig
@@ -43,6 +42,7 @@ in {
       pkgs.gowall
       pkgs.gleam
       pkgs.gimp3
+      pkgs.rawtherapee
     ];
   };
   wayland.windowManager.hyprland = {
@@ -55,6 +55,9 @@ in {
         "gaps_out" = 5;
         "gaps_in" = 3;
         "resize_on_border" = true;
+        gesture = [
+          "3, horizontal, workspace"
+        ];
       };
       monitors = { "monitor" = "eDP-1, 1920x1080@60, 0x0, 1.25"; };
       bind = [
@@ -92,7 +95,6 @@ in {
         kb_options = "";
       };
       decoration = { rounding = 7; };
-      gestures = { "workspace_swipe" = true; };
     };
   };
   programs.kitty = {
