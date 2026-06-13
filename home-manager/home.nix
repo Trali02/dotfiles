@@ -43,6 +43,9 @@ in {
       pkgs.gleam
       pkgs.gimp3
       pkgs.rawtherapee
+      pkgs.python315
+      pkgs.go
+      pkgs.godot
     ];
   };
   wayland.windowManager.hyprland = {
@@ -95,6 +98,9 @@ in {
         kb_options = "";
       };
       decoration = { rounding = 7; };
+      xwayland = {
+        force_zero_scaling = true;
+      };
     };
   };
   programs.kitty = {
@@ -141,7 +147,7 @@ in {
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" ];
       theme = "strug";
     };
   };
