@@ -46,6 +46,7 @@ in {
       pkgs.python315
       pkgs.go
       pkgs.godot
+      pkgs.syncthing
     ];
   };
   wayland.windowManager.hyprland = {
