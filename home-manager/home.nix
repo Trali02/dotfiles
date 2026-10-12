@@ -21,7 +21,6 @@ in {
       pkgs.helix
       pkgs.pavucontrol
       pkgs.htop
-      pkgs.gnome-tweaks
       pkgs.zig
       pkgs.pokeget-rs
       pkgs.zls
@@ -47,6 +46,11 @@ in {
       pkgs.go
       pkgs.godot
       pkgs.syncthing
+      pkgs.nodejs
+      pkgs.inkscape
+      pkgs.freecad
+      pkgs.zotero
+      pkgs.orca-slicer
     ];
   };
   wayland.windowManager.hyprland = {
@@ -174,7 +178,6 @@ in {
     true; # Super+Alt+L in the default setting (screen locker)
   # services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
-  services.polkit-gnome.enable = true; # polkit
 
   services.hyprpaper = {
     enable = true;
